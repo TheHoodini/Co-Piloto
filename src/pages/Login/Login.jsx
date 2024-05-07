@@ -1,24 +1,27 @@
 //import styles
-// import Home from "../Home";
 import styles from "./Login.module.css";
 
 //import React libraries
 
+//React router dom
+import { useNavigate } from "react-router-dom";
+
 const Login = () => {
-  function loadhomepage() {
-    return (
-      <>
-        {/* Set routes using browser router to home page and other stuff */}
-      </>
-    );
-  }
+  //useNavigate imported from react-router-dom to navigate to the home page
+  const navigate = useNavigate();
+
+  const loadhomepage = (event) => {
+    event.preventDefault();
+    //Check credentials logic
+    navigate("/home");
+  };
 
   return (
     <>
       <div className={styles.maincont}>
         <div className={styles.middle}>
           <div className={styles.left}>
-            <form className={styles.form} method="GET" onSubmit={loadhomepage} >
+            <form className={styles.form} method="GET" onSubmit={loadhomepage}>
               <label className={styles.label}>LOGIN</label>
               <input
                 className={styles.inputs}
