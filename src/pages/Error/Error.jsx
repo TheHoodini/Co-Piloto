@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Error = () => {
   return (
     <div className={styles.cont}>
-      <Link to={"/home"}>
+      <Link to={"/"}>
         <div>
           <img
             className={styles.logo}
