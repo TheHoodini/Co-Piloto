@@ -3,7 +3,9 @@ import styles from "./Home.module.css";
 
 import Card from "../../components/Card";
 
+//Fake json file to simulate the database
 import carjson from "../../assets/carjson.json";
+import UserQuestions from "../../components/Userquestions/Userquestions";
 
 const Home = () => {
   return (
@@ -13,6 +15,7 @@ const Home = () => {
         <span style={{ color: "grey" }}>
           For testing sakes we are using a json file to simulate the database
         </span>
+        <UserQuestions />
         <div className={styles.titlecont}>
           <img
             className={styles.imgcont}
@@ -23,6 +26,7 @@ const Home = () => {
         </div>
         <div className={styles.pagecontainer}>
           <div className={styles.recommendations}>
+            {/* Create an animated carousel showing the recommendations (5seg each card) */}
             <div className={styles.titles}>Recommendations</div>
             <div className={styles.recomendationscont}>
               {carjson.map((item, index) => (

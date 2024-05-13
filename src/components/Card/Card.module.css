@@ -5,9 +5,9 @@
   align-items: center;
   margin: 1rem;
   width: 350px;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   font-family: "Lexend", sans-serif;
-  background-color: #ffffff;
+  background-color: #f7f7f7;
 }
 .conttitle {
   display: flex;
