@@ -19,6 +19,8 @@ const Home = () => {
   const [currentCard, setCurrentCard] = useState(null);
 
   const [recommendedcar, setRecommendedCar] = useState([]);
+  const [userResponses, setUserResponses] = useState(null);
+
 
   const handleShowCard = (cardInfo) => {
     // Set the current card's information
@@ -37,15 +39,15 @@ const Home = () => {
   const handleCloseHelp = () => {
     setHelpVisible(false);
   };
+  const checkLocalStorage = () => {
+    setUserResponses(JSON.parse(localStorage.getItem("userResponses")))
+  };
 
   useEffect(() => {
-    // Retrieve the user's responses from the localStorage
-    const userResponses = JSON.parse(localStorage.getItem("userResponses"));
-    // Use the user's responses for the fetch request
     if (userResponses) {
       getRecommendedCar(userResponses).then((data) => setRecommendedCar(data));
     }
-  }, []);
+  }, [userResponses]);
 
   // Engine: 2621;
   // Fuel: 2;
@@ -96,7 +98,7 @@ const Home = () => {
                   <h3>
                     Please fill the information below to show recommendations
                   </h3>
-                  <UserQuestions />
+                  <UserQuestions check={checkLocalStorage} />
                 </div>
               )}
             </div>

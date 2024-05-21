@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import styles from "./Userquestions.module.css";
 
-const UserQuestions = () => {
+const UserQuestions = ({ check }) => {
   const [formValues, setFormValues] = useState({
     Year: "",
     Kilometer: "",
@@ -109,7 +110,7 @@ const UserQuestions = () => {
           onChange={handleChange}
           placeholder="Price"
         />
-        <button className={styles.submitB} type="submit">
+        <button className={styles.submitB} type="submit" onClick={check}>
           Submit
         </button>
       </form>
