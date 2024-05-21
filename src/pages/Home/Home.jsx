@@ -17,10 +17,10 @@ const Home = () => {
   const [isHelpVisible, setHelpVisible] = useState(false);
   // New state for the current card's information
   const [currentCard, setCurrentCard] = useState(null);
-
   const [recommendedcar, setRecommendedCar] = useState([]);
-  const [userResponses, setUserResponses] = useState(null);
-
+  const [userResponses, setUserResponses] = useState(
+    JSON.parse(localStorage.getItem("userResponses"))
+  );
 
   const handleShowCard = (cardInfo) => {
     // Set the current card's information
@@ -39,8 +39,14 @@ const Home = () => {
   const handleCloseHelp = () => {
     setHelpVisible(false);
   };
+
   const checkLocalStorage = () => {
-    setUserResponses(JSON.parse(localStorage.getItem("userResponses")))
+    setUserResponses(JSON.parse(localStorage.getItem("userResponses")));
+  };
+
+  const resetLocalStorage = () => {
+    setUserResponses([]);
+    setRecommendedCar([]);
   };
 
   useEffect(() => {
@@ -48,16 +54,7 @@ const Home = () => {
       getRecommendedCar(userResponses).then((data) => setRecommendedCar(data));
     }
   }, [userResponses]);
-
-  // Engine: 2621;
-  // Fuel: 2;
-  // Kilometer: 674;
-  // Mileage: 18;
-  // Owner: 1;
-  // Price: 31000;
-  // Seats: 5;
-  // Transmission: 0;
-  // Year: 2022;
+  
   return (
     <>
       <div className={styles.maincontainer}>
@@ -79,20 +76,29 @@ const Home = () => {
             <div className={styles.titles}>Recommendations</div>
             <div className={styles.recomendationscont}>
               {recommendedcar.length > 0 ? (
-                recommendedcar.map((item, index) => (
-                  <Card
-                    key={index}
-                    name={item.Name}
-                    // brand={item.Kilometer}
-                    price={item.Price}
-                    seats={item.Seats}
-                    ccengine={item.Engine}
-                    year={item.Year}
-                    fueltype={item.Fuel}
-                    // img={item.img}
-                    handleShowCard={() => handleShowCard(item)}
-                  />
-                ))
+                <div className={styles.justacont}>
+                  {recommendedcar.map((item, index) => (
+                    <Card
+                      key={index}
+                      name={item.Name}
+                      // brand={item.Kilometer}
+                      price={item.Price}
+                      seats={item.Seats}
+                      ccengine={item.Engine}
+                      year={item.Year}
+                      fueltype={item.Fuel}
+                      S
+                      // img={item.img}
+                      handleShowCard={() => handleShowCard(item)}
+                    />
+                  ))}
+                  <button
+                    className={styles.changeP}
+                    onClick={resetLocalStorage}
+                  >
+                    Change parameters
+                  </button>
+                </div>
               ) : (
                 <div className={styles.userquestioncont}>
                   <h3>
