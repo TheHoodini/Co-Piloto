@@ -2,9 +2,24 @@
 //importing styles
 import styles from "./Card.module.css";
 
-const Card = ({ name, brand, price, seats, ccengine, year, fueltype, img }) => {
+const Card = ({
+  name,
+  brand,
+  price,
+  seats,
+  ccengine,
+  year,
+  fueltype,
+  img,
+  // transmission,
+  // owner,
+  // mileage,
+  // kilometer,
+  handleShowCard,
+}) => {
+  //Create the onClick method that shows the full info of the card:
   return (
-    <div className={styles.cardcont}>
+    <div className={styles.cardcont} onClick={handleShowCard}>
       <div className={styles.conttitle}>
         <div className={styles.title}>{name}</div>
         <div className={styles.brandcont}>
@@ -16,16 +31,16 @@ const Card = ({ name, brand, price, seats, ccengine, year, fueltype, img }) => {
           <img src={img} alt="carimg" className={styles.carimg} />
         </div>
         <div className={styles.carinfocont}>
+          Year: {year}
+          <br />
           Seats: {seats}
           <br />
           CC: {ccengine}
           <br />
-          Year: {year}
-          <br />
           Fuel-type: {fueltype}
         </div>
       </div>
-      <div className={styles.contprice}>${price} COP</div>
+      <div className={styles.contprice}>${price} USD</div>
     </div>
   );
 };
