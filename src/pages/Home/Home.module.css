@@ -122,10 +122,21 @@ body {
   background-color: #d90429;
   cursor: pointer;
 }
+.searchresultscont {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  overflow-x: hidden;
+  padding: 1rem;
+  color: #d6d6d6;
+  align-content: space-between;
+  justify-content: space-evenly;
+}
 .searchresults {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
+  color: #000000;
   overflow: scroll;
   overflow-x: hidden;
   padding: 1rem;
@@ -169,4 +180,28 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.pagebutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: xx-large;
+  border: none;
+  color: white;
+  background-color: #d9042700;
+  cursor: pointer;
+}
+:disabled {
+  color: #d9042700;
+  cursor: not-allowed;
+}
+
+.intro{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
 }

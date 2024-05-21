@@ -28,11 +28,7 @@ const UserQuestions = ({ check }) => {
     // Save the user's responses to the localStorage
     localStorage.setItem("userResponses", JSON.stringify(formValues));
 
-    // Process the user inputs here, you can use them as needed
-    console.log(
-      "User Responses:",
-      JSON.parse(localStorage.getItem("userResponses"))
-    );
+    check();
   };
 
   return (

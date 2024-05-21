@@ -31,9 +31,9 @@ const Card = ({
           <img src={img} alt="carimg" className={styles.carimg} />
         </div>
         <div className={styles.carinfocont}>
-          Year: {year}
+          Year: {parseInt(year)}
           <br />
-          Seats: {seats}
+          Seats: {parseInt(seats)}
           <br />
           CC: {ccengine}
           <br />
