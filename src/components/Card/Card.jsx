@@ -28,7 +28,15 @@ const Card = ({
       </div>
       <div className={styles.continfo}>
         <div className={styles.carimg}>
-          <img src={img} alt="carimg" className={styles.carimg} />
+        {img ? (
+              <img src={img} alt="carimg" className={styles.carimg} />
+            ) : (
+              <img
+                src="https://images.cars.com/cldstatic/wp-content/uploads/25626570-1425510871661.jpeg"
+                alt="carimg"
+                className={styles.carimg}
+              />
+            )}
         </div>
         <div className={styles.carinfocont}>
           Year: {parseInt(year)}
