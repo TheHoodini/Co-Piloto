@@ -11,14 +11,11 @@
 }
 .info_content {
   background: #242a38;
-  background-size: cover;
   border: black solid 0.12rem;
-  padding: 20px;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50rem;
 }
 .about {
   display: flex;
@@ -28,40 +25,39 @@
 
 .close_button {
   position: relative;
-  height: 24px;
-  width: 24px;
+  height: 28px;
+  width: 28px;
   color: white;
-  background-color: red;
-  top: 0;
-  left: 45%;
+  background-color: #d90429;
+  margin-top: 1rem;
+  left: 44%;
   cursor: pointer;
-  border-style: outset;
+  border: none;
   border-radius: 0.5rem;
 }
 
 /* card stuff */
 
 .information {
+  font-family: "Lexend", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
-  width: 350px;
   border-radius: 1rem;
-  font-family: "Lexend", sans-serif;
-  background-color: #f7f7f7;
+  color: white;
 }
 .conttitle {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
+  flex-direction: column;
+  margin-inline: 1rem;
+  align-items: center;
 }
 .title {
   margin-left: 0.8rem;
   padding-top: 0.5rem;
   font-weight: bolder;
+  font-size: xx-large;
 }
 .brandcont {
   background-color: #242a38;
@@ -71,20 +67,35 @@
 }
 .brandimg {
   display: block;
-  max-height: 30px;
+  max-height: 80px;
   max-width: 100%;
 }
 .carimg {
-  height: 90px;
-  max-width: 100%;
+  padding-block: 1rem;
+  width: 500px;
 }
 .continfo {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
-  width: 100%;
+  justify-content: space-between;
   margin-block: 1rem;
+  padding-inline: 1rem;
+  border-bottom: #d90429 solid 0.1rem;
+  width: 90%;
+}
+.carinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: xx-large;
+  padding-bottom: 1rem;
+}
+.carinfo div {
+  font-size: large;
+  font-weight: lighter;
 }
 .contprice {
   display: flex;
@@ -93,4 +104,18 @@
   font-weight: bolder;
   font-size: x-large;
   padding-block: 0.2rem;
+}
+.otherinfocont{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding-bottom: 2rem;
+}
+.otherinfo{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+#one{
+  padding-right: 3rem;
 }
